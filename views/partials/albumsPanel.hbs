@@ -1,0 +1,21 @@
+				<!--ALBUMS PANEL-->
+				<div style="margin-top:100px; margin-left:auto; margin-right:auto; text-align:center; width:75%;">
+					
+					<h1 style="margin-bottom:45px;">Albums</h1>
+					<div class="card-columns">
+						{{#each albums}}
+						
+						<a href="/music/albums/{{this.id}}" class="thumbnail">
+							<div class="card">
+								<img class="card-img-top" src="{{this.img}}" alt="{{this.name}}" style="width:100%">
+								
+								<div class="card-block">
+									<h6> {{this.name}} </h6>
+								</div>
+							</div>
+						</a>
+						
+						{{/each}}
+					</div>
+					
+				</div>

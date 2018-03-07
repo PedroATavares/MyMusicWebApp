@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                
+        {{> head}}
+		
+        {{> style}}
+
+    </head>
+
+    <body>
+
+{{>navigationbar_unselected}}
+
+            <div class= "container">
+               
+                <div class="jumbotron container-fluid">
+                    <h4 style="margin-bottom:30px"> Share your Playlist </h4>
+                        <form action="/sharePlaylist" method="post">
+                            <div>
+                                
+                                <!-- INSERT A USERNAME -->
+                                <div class="col-sm-12 col-md-4" style="margin-bottom:10px">
+                                    <input type="text" class="form-control" name="receiverId" placeholder="Type a username..." autofocus>
+                                </div>
+
+                                <!-- GIVE EDIT PERMISSION -->
+                                <label class="custom-control custom-checkbox col-sm-12 col-md-4">
+                                    <input type="checkbox" class="custom-control-input" name="editable">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"> give hability add/remove</span>
+                                </label>
+
+
+                                <!-- HIDDEN VALUES -->
+                                <input type="hidden" name="playlistId" value="{{id}}" />
+                                <input type="hidden" name="playlistName" value="{{playlistName}}" />
+                                
+                            </div>
+                            
+                            <div>
+
+                                <div class="col-sm-6 col-md-4" style="margin-bottom:10px">
+                                    <input type="submit" class="btn btn-success" value="Share">
+                                </div>
+                            </div>
+
+                        </form>
+                </div>
+                        
+            </div>
+    </body>
+</html>

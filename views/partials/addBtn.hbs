@@ -1,0 +1,26 @@
+<div class="dropdown">
+    
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      Add to playlist
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+        
+        
+         {{#each playlists}}
+                <li>
+                        <a href="javascript:;" onclick="addTrack('{{../owner}}','{{id}}','{{../id}}')">{{name}}</a>
+                </li>
+         {{/each}}
+
+         {{#each sharedPlaylists}}
+            {{#if editable}}
+                <li>
+                        <a href="javascript:;" onclick="addTrack('{{owner}}','{{id}}','{{../id}}')">{{name}}</a>
+                </li>
+            {{/if}}
+         {{/each}}
+    </ul>
+
+</div>

@@ -1,0 +1,33 @@
+
+				<!--TRACKS-->
+				<table class=table style="margin-top:100px;">
+					<thead> 
+						<tr> 
+							<th>Track name</th>		<th>Length</th>
+						</tr> 
+					</thead>
+					<tbody> 
+						{{#each tracks}}
+							<tr> 
+									<td scope=row>{{this.name}}</td> 
+									<td>{{this.length}}</td> 
+									<td><a href="{{this.preview}}">preview</a></td>
+									{{#if ../user}}
+										{{#if ../album}}
+											<td> {{>addBtn}} </td>
+										{{else}}
+											{{#if ../Permission}}
+												<td>
+														<div class="input-group">
+															<span class="input-group-btn"><button onclick="removeTrack('{{id}}','{{../playlistId}}','{{../owner}}')" type="button" class="btn btn-danger">Remove</button></span>
+														</div>
+												
+												</td>
+											{{/if}}
+										{{/if}}
+									{{/if}}
+							</tr>
+						{{/each}}
+					</tbody> 
+				</table> 
+				</div>

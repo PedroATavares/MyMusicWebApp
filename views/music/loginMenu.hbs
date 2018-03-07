@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                
+        {{> head}}
+		
+        {{> style}}
+
+    </head>
+
+    <body>
+
+{{>navigationbar_selected login="foo"}}
+
+            <div class= "container">
+               
+                {{#if failed}}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> Check if your info is correct before press <strong>Log In</strong>
+                    </div>
+                {{/if}}
+
+               {{> loginForm}}
+                        
+            </div>
+    </body>
+</html>

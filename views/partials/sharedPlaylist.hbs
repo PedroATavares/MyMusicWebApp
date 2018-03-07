@@ -1,0 +1,37 @@
+<th><a href="playlists/{{id}}">{{name}}</a></th> 
+
+{{#unless accepted}}
+
+<td>
+    <form action="/acceptInvite" method="post">
+
+                <span class="input-group-btn"><button type="button submit" class="btn btn-success">Accept invite</button></span>
+                <input type="hidden" name="playlistId" value="{{id}}">
+            
+    </form>
+</td>
+
+<td>
+    <form action="/cancelInvite" method="post">
+
+                <span class="input-group-btn"><button type="button submit" class="btn btn-danger">Refuse invite</button></span>
+                <input type="hidden" name="playlistId" value="{{id}}">
+                <input type="hidden" name="playlistOwner" value="{{owner}}">
+            
+    </form>
+</td>
+
+{{else}}
+
+<td>
+    <form action="/removeSharedPlaylist" method="post">
+
+                <span class="input-group-btn"><button type="button submit" class="btn btn-danger">Remove</button></span>
+                <input type="hidden" name="playlistId" value="{{id}}">
+                <input type="hidden" name="playlistOwner" value="{{owner}}">
+            
+    </form>
+</td>
+
+{{/unless}}
+

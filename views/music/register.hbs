@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                
+        {{> head}}
+		
+        {{> style}}
+
+    </head>
+
+    <body>
+
+{{> navigationbar_unselected}}
+    
+    <div class= "container">
+        <div class="jumbotron">
+            <h4 style="margin-bottom:30px"> Register </h4>
+            
+            <form action="/signup" method="post" content-align="center">
+                <div>
+                    {{> inputGroup nr='1' holder='first an last name' addon='full name' name="name"}}
+
+                    {{> inputGroup nr='2' holder='be creative' addon='username' name="user"}}
+
+                    {{> inputGroup nr='3' holder='try something hard to guess' addon='password' name="pw" pw="foo"}}
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-danger" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </body>
+</html>

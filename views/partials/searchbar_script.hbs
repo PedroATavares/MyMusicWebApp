@@ -1,0 +1,29 @@
+	<script type="text/javascript">
+
+		function enterPressed(e)
+		{
+			if(document.getElementById("btn").disabled != true)
+				if (e.keyCode == 13) 
+				{
+					const inputValue = '{{component}}' + document.getElementById('inputForm').value.toString();
+					window.location.replace(inputValue);
+				}
+		}
+		
+		function buttonActivate()
+		{
+			if (document.getElementById("inputForm").value.length < 1)
+				document.getElementById("btn").disabled = true;
+			
+			else
+				document.getElementById("btn").disabled = false;
+		}
+
+
+		function redirect()
+		{
+			const inputValue = '{{component}}' + document.getElementById('inputForm').value.toString();
+			window.location.replace(inputValue);
+		}
+
+	</script>

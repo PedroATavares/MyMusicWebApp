@@ -1,0 +1,27 @@
+<tr id="{{id}}">
+   <th><a href="playlists/{{id}}">{{name}}</a></th> 
+
+    <td>
+            <!-- REMOVE Playlist button -->
+            <span class="input-group-btn col-sm-12 col-md-3"><button onclick="removePlaylist('{{id}}')" type="button" class="btn btn-danger">Remove</button></span>
+    </td>
+    <td>
+            <!-- EDIT NAME Playlist button -->
+            <span class="input-group-btn col-sm-12 col-md-3"><button onclick="editPlaylistName('{{name}}','{{id}}')" type="button" class="btn btn-warning">Edit</button></span>
+    </td>
+    <td>                
+            <!-- SHARE Playlist button -->
+            <form action="/music/sharePlaylistMenu/{{id}}" method="get">
+                <span class="input-group-btn col-sm-12 col-md-3"><button type="button submit" class="btn btn-success">Share</button></span>
+                <input type="hidden" name="playlistName" value="{{name}}"></input>
+            </form>
+    </td>
+
+    <td>                
+            <!-- SHARE Playlist button -->
+            <form action="/music/permissions/{{id}}" method="get">
+                <span class="input-group-btn col-sm-12 col-md-3"><button type="button submit" class="btn btn-warning">Permissions</button></span>
+            </form>
+
+    </td>
+</tr>

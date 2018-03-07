@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {{> head}}
+	
+        {{> style}}
+		
+	</head>
+    <body>    
+        {{> navigationbar_unselected}}
+        <div class="container">
+			<div class="jumbotron">
+                <h1>{{message}}</h1>
+                <h2>{{error.status}}</h2>
+			</div>
+        </div>
+    </body>
+</html>

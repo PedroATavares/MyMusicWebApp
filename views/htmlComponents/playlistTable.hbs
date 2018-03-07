@@ -1,0 +1,24 @@
+<table class=table style="margin-top:100px;">
+    <thead> 
+        <tr> 
+            <th>Playlist name</th>	<th>options</th>
+        </tr> 
+    </thead>
+    
+    <!--Need This div to make DOM and AJAX easier-->
+    <tbody id="playlistTable"> 
+
+        {{#each user.playlists}}
+            <tr id="{{id}}"> 
+                {{>playlist}}
+            </td>
+        {{/each}}
+
+        {{#each user.sharedPlaylists}}
+            <tr id="{{id}}"> 
+                {{>sharedPlaylist}}
+            </tr>
+        {{/each}}
+
+    </tbody> 
+</table> 

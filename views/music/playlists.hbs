@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+{{> head}}
+	
+{{> style}}
+		
+	</head>
+	
+    <body>
+		
+{{> navigationbar_unselected}}
+		
+		<!--ALBUM -->
+		<div class="container">
+			<div class="jumbotron">
+			
+				<h1>{{../name}}</h1>
+				<h3>{{../size}} songs</h3>
+				
+		<!--Need This div to make DOM and AJAX easier-->
+		<div id="trackTable" >			
+			{{>trackTable}}
+		</div>	
+			</div>
+		</div>
+    </body>
+	
+</html> 

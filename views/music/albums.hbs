@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+{{> head}}	
+
+{{> style}}
+		
+	</head>
+	
+    <body>
+		
+{{> navigationbar_unselected}}
+		
+		<!--ALBUM -->
+		<div class="container">
+			<div class="jumbotron">
+			
+				<h1>{{name}}</h1>
+				<img src="{{img}}" alt="image not found" height="200" width="200">
+				
+{{>trackTable}}
+			
+			</div>
+		</div>
+    </body>
+	
+</html> 

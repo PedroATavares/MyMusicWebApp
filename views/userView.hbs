@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                
+        {{> head}}
+		
+        {{> style}}
+
+    </head>
+
+    <body>
+
+{{>navigationbar_selected userView="foo"}}
+
+            <div class= "container">
+
+                    <div class= "jumbotron">
+
+                        <div class="panel-heading">
+                            <h4>{{user.fullname}}</h4>
+                        </div>
+
+                        
+                            <!--Playlists-->
+                            {{> playlistTable}}
+                        </div>
+
+                        <form action="/createPlaylist" method="post">
+                            <div class="input-group">
+                            
+                                <span class="input-group-btn">
+                                    <button onclick="addPlaylist()" id="btn" type="button" class="btn btn-danger" disabled="true">Add</button>
+                                </span>
+                                
+                                <input type="text" name="name" class="form-control" placeholder="Write a name you like" id="inputForm" onkeyup="buttonActivate()" onkeypress="enterPressed(event)" autofocus>
+                            
+                            </div>
+
+                    </div>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+		<!--NAVIGATION BAR-->
+		<div class="container">
+			<nav class="navbar navbar-light bg-faded">
+				
+				<ul class="nav navbar-nav">
+				  <li class="nav-item {{#if home}}active{{/if}}"><a class="nav-link" href="/music/home">Home</a></li>
+				  <li class="nav-item {{#if search}}active{{/if}}"><a class="nav-link" href="/music/searchMenu">Search</a></li>
+				  <li class="nav-item {{#if artists}}active{{/if}}"><a class="nav-link" href="/music/artistsMenu">Artist</a></li>
+	  			 {{#if user}} <li class="nav-item {{#if userView}}active{{/if}}" id="user"><a class="nav-link" href="/music/userMenu">{{user.fullname}}</a></li>{{/if}}
+				</ul>
+
+
+				{{#if user}}
+				<form action="/logout" method="post" class="form-inline float-xs-right">
+						<div>
+    					<input class="btn btn-outline-danger" type="submit" value="Logout">
+						</div>
+  				</form>
+				{{else}}
+				<form action="/music/loginMenu" method="get" class="form-inline float-xs-right">
+						<div>
+    					<input class="btn btn-outline-success" type="submit" value="Login">
+						</div>
+  				</form>
+				{{/if}}
+		</div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+{{> head}}
+	
+{{> style}}
+		
+	</head>
+	
+    <body>
+		
+{{> navigationbar_unselected}}
+		
+		<!--ARTISTA -->
+		<div class="container">
+			<div class="jumbotron">
+			
+				<h1>{{name}}</h1>
+				<img src="{{img}}" alt="image not found" height="200" >
+				<div class="container">
+					<div class="row">
+					
+					  <div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+						  <img src="https://s12.postimg.org/t56vm3s3t/followers.png">
+						  <div class="caption">
+							<h3>Followers</h3>
+							<p>{{followers}} followers</p>
+						  </div>
+						</div>
+					  </div>
+					  
+					  <div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+						  <img src="https://s12.postimg.org/6hrmfycjt/genres.png">
+						  <div class="caption">
+							<h3>Genres</h3>
+								<ul>
+									{{#each genres}}
+										<li>{{this}}</li>
+									{{/each}}
+								</ul>
+						  </div>
+						</div>
+					  </div>
+					  
+					  <div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+						  <img src="https://s12.postimg.org/6vsyfjwnd/popularity.png">
+						  <div class="caption">
+							<h3>Popularity</h3>
+							<p>Top {{popularity}}</p>
+						  </div>
+						</div>
+					  </div>
+					  
+					</div>
+				</div>
+				
+{{>albumsPanel}}
+				
+			</div>
+		</div>
+    </body>
+	
+</html> 

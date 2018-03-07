@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                
+        {{> head}}
+		
+        {{> style}}
+
+    </head>
+
+    <body>
+
+{{>navigationbar_unselected}}
+
+            <div class= "container">
+               
+                <div class="jumbotron container-fluid">
+                    <h4 style="margin-bottom:30px"> Permissions in {{playlistName}} Playlist </h4>
+                            <table class=table style="margin-top:100px;">
+                                <thead> 
+                                    <tr> 
+                                        <th>Username</th>	<th>Permissions</th>
+                                    </tr> 
+                                </thead>
+                                
+                                <!--Need This div to make DOM and AJAX easier-->
+                                <tbody id="sharedTable"> 
+
+                                    {{#each sharedUsers}}
+                                        <tr id="{{username}}">  
+                                            <td> {{username}} </td>
+                                            <td>
+                                                <label class="custom-control custom-checkbox col-sm-12 col-md-4">
+                                                    {{#if editable}}
+                                                        <input id="chk{{username}}" type="checkbox" class="custom-control-input" name="editable" checked onclick="giveOrTakeWrite('{{username}}','{{../playlistId}}')">
+                                                    {{else}}
+                                                        <input id="chk{{username}}" type="checkbox" class="custom-control-input" name="editable" onclick="giveOrTakeWrite('{{username}}','{{../playlistId}}')">
+                                                    {{/if}}
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"> Can Add/Remove Tracks from Playlist</span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <span class="input-group-btn col-sm-12 col-md-3"><button onclick="stopShare('{{username}}','{{../playlistId}}')" type="button" class="btn btn-danger">Stop Sharing</button></span>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                    
+                                </tbody> 
+                            </table> 
+                        
+                </div>
+                        
+            </div>
+    </body>
+</html>

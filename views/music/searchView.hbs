@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+{{> head}}
+		
+{{> style}}
+
+	</head>
+	
+    <body>
+
+{{> navigationbar_unselected}}
+		
+		<!--SEARCH-->
+		<div class="container">
+			<div class="jumbotron">
+			
+				<h1>Result</h1>
+				
+				<div class="card-columns">
+					
+					{{#each artists}}
+						<a href="/music/artists/{{this.id}}">
+
+								<div class="card card-inverse">
+									<img  class="card-img" src="{{this.img}}" onerror="this.src='http://static2.hexblot.gr/sites/default/files/styles/articlefull/public/article_images/image-not-found.gif?itok=HhSw--GS';" style="width:100%">
+									
+									<div class="card-img-overlay"  style="padding:0px 0px 0px 0px;">
+										<h4 class="card-text" style="position:absolute;top:70%;left:0;width:100%;background-color:rgba(0,0,0, .5);color:white;"> {{this.name}} </h4>
+									</div>
+								</div>
+						</a>
+					{{/each}}  
+					  
+				</div>
+				
+				<ul class="breadcrumb">
+				{{#if previous}}
+				<li>
+					<a href={{./base}}{{./previous}}>Previous</a>
+				</li>
+				{{/if}}
+				
+				<li>
+					<a href={{base}}>First Page</a>
+				</li>
+				
+				<li>
+					<a href={{base}}{{last}}>Last Page </a>
+				</li>
+				{{#if next}}
+				<li>
+					<a href={{./base}}{{./next}}>Next</a>
+				</li>
+				{{/if}}
+				</ul>
+				
+				<p>Total results: {{total}} </p>
+			</div>
+		</div>
+    </body>
+	
+</html> 
